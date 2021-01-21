@@ -1,0 +1,21 @@
+<div class="modal-dialog text-center">
+    <div class="col-sm-8 main-section">
+        <div class="modal-content">
+            <div class="col-12 user-img">
+                <img src="assets/img/user.png" th:src="@{/img/user.png}"/>
+            </div>
+            <div class="col-12">
+                <div class="form-group" id="user-group">
+                    <input type="text" class="form-control" placeholder="Nombre de usuario" name="username" [(ngModel)]="userName"/>
+                </div>
+                <div class="form-group" id="contrasena-group">
+                    <input type="password" class="form-control" placeholder="Contrase&ntilde;a" name="password" [(ngModel)]="password"/>                
+                </div>
+                <button type="button" (click)="login()" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>  Ingresar </button>
+            </div>
+            <div *ngIf="param.alert" class="alert" [ngClass]=" {'alert-danger': param.type == 'danger','alert-success': param.type == 'success'} " role="alert">
+	            {{ param.message }}
+	        </div>	        
+        </div>
+    </div>
+</div>

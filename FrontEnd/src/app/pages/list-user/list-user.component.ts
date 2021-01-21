@@ -38,6 +38,16 @@ export class ListUserComponent implements OnInit {
 			this.service.closeDialog();
 			if(data.hasOwnProperty("error")) this.service.presentToast("¡Error!", "Algo paso" + data.msg );
 			else{
+				for(let d of data){
+					if(d.hasOwnProperty("GivenName")){
+						d["id"] = d.Id;
+						d["givenname"] = d.GivenName;
+						d["lastname"] = d.LastName;
+						d["document"] = d.Document;
+						d["mail"] = d.Mail;
+						d["phone"] = d.Phone;
+					}
+				}
 				this.users = data;
 			}
 		});
@@ -107,6 +117,9 @@ export class ListUserComponent implements OnInit {
 	}
 
 	doGuardar(){
+		if( this.user.hasOwnProperty("_id")) delete this.user._id;
+		if( this.user.hasOwnProperty("id")) delete this.user.id;
+
 		this.service.setUser(this.user, (data) => {
 			this.service.closeDialog();
 			if(data.hasOwnProperty("error")) this.service.presentToast("¡Error!", "Algo paso" + data.msg );
@@ -124,7 +137,9 @@ export class ListUserComponent implements OnInit {
 
 
 	editar(user){
-		this.actual_id = user._id;
+		if(user.hasOwnProperty("_id")) this.actual_id = user._id;
+		else this.actual_id = user.id;
+
 		this.user.givenname = user.givenname;
 		this.user.lastname = user.lastname;
 		this.user.document = user.document;
@@ -134,10 +149,15 @@ export class ListUserComponent implements OnInit {
 		this.service.presentModal("#agregarUser");
 	}
 
-	eliminar(_id){
+	eliminar(user){
+		console.log(user)
 		let confirmar = (result) => {
 	      if (result.isConfirmed) {  
-	        console.log('Confirm Okay');         
+	        let _id;
+
+	        if(user.hasOwnProperty("_id")) _id = user._id;
+			else _id = user.id;
+
 	        this.service.delUser({ _id: _id }, (data) =>{
 	          this.service.closeDialog();
 	          if(data.hasOwnProperty("error")) this.service.presentToast("¡Algo paso!", data.message, "error");

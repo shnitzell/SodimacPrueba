@@ -23,7 +23,9 @@ app.post('/api/user/set', function(req, res) {
         { 'document': rq.document }
       ]
     }).then( function(doc) {
-      if(!doc) {     
+      if(!doc) {    
+        if(rq.hasOwnProperty("_id")) delete rq._id;
+
         dbConnection.collection('users').insertOne( rq, function(err, data) {
           if(err) res.send({ error: true, message: 'No se pudo crear usuario' });
           else res.send({ success: true });           
@@ -58,7 +60,7 @@ app.post('/api/user/del', function(req, res) {
 /**********Actualiza los datos de usuario***********/
 app.post('/api/user/put', function(req, res) {  
   var rq = req.body;  
-  
+
   var _id = new ObjectID(rq._id);
   delete rq._id;
 

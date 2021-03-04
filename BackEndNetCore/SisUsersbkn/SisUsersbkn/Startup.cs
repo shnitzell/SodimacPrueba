@@ -46,7 +46,13 @@ namespace SisUsersbkn
                   .AllowCredentials());
             });
 
-            services.Add(new ServiceDescriptor(typeof(UsersContext), new UsersContext(Configuration.GetConnectionString("DefaultConnection"))));
+            services.Add(
+                    new ServiceDescriptor(
+                            typeof(ClientesContext), 
+                            new ClientesContext( Configuration.GetConnectionString("DefaultConnection") )
+                         )
+                    );
+
             services.AddControllers(options => options.EnableEndpointRouting = false);            
         }
 
@@ -69,14 +75,14 @@ namespace SisUsersbkn
             {
                 routes.MapRoute("API.Home", "/API",
                             defaults: new { controller = "API", action = "Home" });
-                routes.MapRoute("API.getUsers", "/API/user/list",
-                            defaults: new { controller = "API", action = "getUsers" });
-                routes.MapRoute("API.setUser", "/API/user/set",
-                            defaults: new { controller = "API", action = "setUser" });
-                routes.MapRoute("API.putUser", "/API/user/put",
-                            defaults: new { controller = "API", action = "putUser" });
-                routes.MapRoute("API.delUser", "/API/user/del",
-                            defaults: new { controller = "API", action = "delUser" });
+                routes.MapRoute("API.getUsers", "/API/clientes/list",
+                            defaults: new { controller = "API", action = "getClientes" });
+                routes.MapRoute("API.setUser", "/API/clientes/set",
+                            defaults: new { controller = "API", action = "setClientes" });
+                routes.MapRoute("API.putUser", "/API/clientes/put",
+                            defaults: new { controller = "API", action = "putClientes" });
+                routes.MapRoute("API.delUser", "/API/clientes/del",
+                            defaults: new { controller = "API", action = "delClientes" });
             });
 
             app.UseRouting();

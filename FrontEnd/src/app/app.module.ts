@@ -7,13 +7,13 @@ import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { ListUserComponent } from './pages/list-user/list-user.component';
+import { ListClientesComponent } from './pages/list-clientes/list-clientes.component';
 import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListUserComponent,
+    ListClientesComponent,
     LoginComponent
   ],
   imports: [

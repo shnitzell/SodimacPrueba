@@ -116,20 +116,20 @@ export class ApiService{
       Swal.close();
     }
 
-    setUser( userData: any, callBack ){        
-        this.doRequest(`${this.api}/user/set`, userData, callBack, 'post');
+    setClientes( userData: any, callBack ){        
+        this.doRequest(`${this.api}/clientes/set`, userData, callBack, 'post');
     }    
 
-    getUser(callBack){
-        this.doRequest(`${this.api}/user/list`, {}, callBack, 'post');
+    getClientes( callBack ){
+        this.doRequest(`${this.api}/clientes/list`, {}, callBack, 'post');
     }
 
-    putUser(userData: any, callBack){
-       this.doRequest(`${this.api}/user/put`, userData, callBack, 'post');
+    putClientes( userData: any, callBack ){
+       this.doRequest(`${this.api}/clientes/put`, userData, callBack, 'post');
     }
 
-    delUser(userData: any, callBack){
-       this.doRequest(`${this.api}/user/del`, userData, callBack, 'post');
+    delClientes( userData: any, callBack ){
+       this.doRequest(`${this.api}/clientes/del`, userData, callBack, 'post');
     }
 
 }

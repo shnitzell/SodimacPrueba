@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kagp1\\proyects\\PruebaTecnica\\BackEndNetCore\\SisUsersbkn\\SisUsersbkn\\SisUsersbkn.csproj": {}
+    "C:\\Users\\kagp1\\proyects\\PruebaTecnicaSodimac\\BackEndNetCore\\SisUsersbkn\\SisUsersbkn\\SisUsersbkn.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kagp1\\proyects\\PruebaTecnica\\BackEndNetCore\\SisUsersbkn\\SisUsersbkn\\SisUsersbkn.csproj": {
+    "C:\\Users\\kagp1\\proyects\\PruebaTecnicaSodimac\\BackEndNetCore\\SisUsersbkn\\SisUsersbkn\\SisUsersbkn.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kagp1\\proyects\\PruebaTecnica\\BackEndNetCore\\SisUsersbkn\\SisUsersbkn\\SisUsersbkn.csproj",
+        "projectUniqueName": "C:\\Users\\kagp1\\proyects\\PruebaTecnicaSodimac\\BackEndNetCore\\SisUsersbkn\\SisUsersbkn\\SisUsersbkn.csproj",
         "projectName": "SisUsersbkn",
-        "projectPath": "C:\\Users\\kagp1\\proyects\\PruebaTecnica\\BackEndNetCore\\SisUsersbkn\\SisUsersbkn\\SisUsersbkn.csproj",
+        "projectPath": "C:\\Users\\kagp1\\proyects\\PruebaTecnicaSodimac\\BackEndNetCore\\SisUsersbkn\\SisUsersbkn\\SisUsersbkn.csproj",
         "packagesPath": "C:\\Users\\kagp1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kagp1\\proyects\\PruebaTecnica\\BackEndNetCore\\SisUsersbkn\\SisUsersbkn\\obj\\",
+        "outputPath": "C:\\Users\\kagp1\\proyects\\PruebaTecnicaSodimac\\BackEndNetCore\\SisUsersbkn\\SisUsersbkn\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kagp1\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,9 +40,9 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "MySql.Data": {
+            "System.Data.SqlClient": {
               "target": "Package",
-              "version": "[8.0.23, )"
+              "version": "[4.8.2, )"
             },
             "Utf8Json": {
               "target": "Package",
